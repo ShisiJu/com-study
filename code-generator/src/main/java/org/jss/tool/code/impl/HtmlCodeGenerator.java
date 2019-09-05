@@ -1,7 +1,7 @@
-package tool.code.impl;
+package org.jss.tool.code.impl;
 
 
-import tool.code.CodeGenerator;
+import org.jss.tool.code.CodeGenerator;
 
 /**
  * @author jushisi
@@ -10,12 +10,13 @@ import tool.code.CodeGenerator;
 
 public class HtmlCodeGenerator implements CodeGenerator {
 
+    @Override
     public String handleInputLine(String format, String line) {
         if (line == null) {
             return "\n";
         }
 
-        String[] split = line.split("\\t");
+        String[] split = line.split("\\s");
 
         String formatted = "";
         formatted = format.replace("${field}", split[0]);

@@ -1,4 +1,4 @@
-package tool.code;
+package org.jss.tool.code;
 
 
 /**
