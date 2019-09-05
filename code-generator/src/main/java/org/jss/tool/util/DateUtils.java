@@ -1,9 +1,9 @@
-package tool.util;
+package org.jss.tool.util;
 
 import java.util.Calendar;
 
 /**
- * @author Administrator
+ * @author jushisi
  * @date 2019/9/5
  */
 
