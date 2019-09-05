@@ -1,6 +1,8 @@
-package org.jss.tool.code;
+package org.jss.tool.code.impl;
 
 
+import org.jss.tool.code.AbstractCodeGenerator;
+import org.jss.tool.code.CodeGenerator;
 import org.jss.tool.util.DateUtils;
 
 import java.io.*;
@@ -11,21 +13,10 @@ import java.util.stream.Collectors;
  * @date 2019/9/5
  */
 
-public class CommonCodeGenerator {
+public class CommonCodeGenerator extends AbstractCodeGenerator {
 
-    private String fileName;
-    private String templateName;
-    private String pathName;
-    private CodeGenerator codeGenerator;
-
-    public CommonCodeGenerator(String fileName, String templateName, String pathName, CodeGenerator codeGenerator) {
-        this.fileName = fileName;
-        this.templateName = templateName;
-        this.pathName = pathName;
-        this.codeGenerator = codeGenerator;
-    }
-
-    protected String handleInputStream() throws IOException {
+    @Override
+    public String handleInputStream() throws IOException {
         try (Reader reader = new FileReader(this.pathName + this.fileName);
              Reader templateReader = new FileReader(this.pathName + this.templateName);
              BufferedReader bufferedReader = new BufferedReader(reader);
@@ -44,8 +35,8 @@ public class CommonCodeGenerator {
         }
     }
 
-
-    protected void handleOut(String lines) throws IOException {
+    @Override
+    public void handleOut(String lines) throws IOException {
         File file = new File(this.pathName + "output-" + getSuffix());
         try (Writer writer = new FileWriter(file)) {
             writer.write(lines);
@@ -53,14 +44,19 @@ public class CommonCodeGenerator {
 
     }
 
-
+    @Override
     public void handle() throws IOException {
         String handledString = handleInputStream();
         handleOut(handledString);
     }
 
-    protected String getSuffix() {
+    private String getSuffix() {
         return DateUtils.getDate();
+    }
+
+
+    public CommonCodeGenerator(String fileName, String templateName, String pathName, CodeGenerator codeGenerator) {
+        super(fileName, templateName, pathName, codeGenerator);
     }
 
 
