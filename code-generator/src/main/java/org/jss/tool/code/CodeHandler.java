@@ -5,7 +5,7 @@ package org.jss.tool.code;
  * @author jushisi
  * @date 18:47 2019/9/4
  **/
-public interface CodeGenerator {
+public interface CodeHandler {
 
     /**
      * 处理模板数据,并返回格式化后的数据

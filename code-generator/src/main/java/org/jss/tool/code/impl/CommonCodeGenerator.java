@@ -2,7 +2,7 @@ package org.jss.tool.code.impl;
 
 
 import org.jss.tool.code.AbstractCodeGenerator;
-import org.jss.tool.code.CodeGenerator;
+import org.jss.tool.code.CodeHandler;
 import org.jss.tool.util.DateUtils;
 
 import java.io.*;
@@ -26,7 +26,7 @@ public class CommonCodeGenerator extends AbstractCodeGenerator {
             StringBuilder stringBuilder = new StringBuilder();
             String format = formatReader.lines().collect(Collectors.joining(" "));
             while (line != null) {
-                String handledString = this.codeGenerator.handleInputLine(format, line);
+                String handledString = this.codeHandler.handleInputLine(format, line);
                 stringBuilder.append(handledString);
                 stringBuilder.append("\n");
                 line = bufferedReader.readLine();
@@ -55,8 +55,8 @@ public class CommonCodeGenerator extends AbstractCodeGenerator {
     }
 
 
-    public CommonCodeGenerator(String fileName, String templateName, String pathName, CodeGenerator codeGenerator) {
-        super(fileName, templateName, pathName, codeGenerator);
+    public CommonCodeGenerator(String fileName, String templateName, String pathName, CodeHandler codeHandler) {
+        super(fileName, templateName, pathName, codeHandler);
     }
 
 

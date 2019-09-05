@@ -1,7 +1,5 @@
 package org.jss.tool.code;
 
-import org.jss.tool.util.DateUtils;
-
 import java.io.*;
 
 /**
@@ -16,13 +14,13 @@ public abstract class AbstractCodeGenerator {
     protected String fileName;
     protected String templateName;
     protected String pathName;
-    protected CodeGenerator codeGenerator;
+    protected CodeHandler codeHandler;
 
-    protected AbstractCodeGenerator(String fileName, String templateName, String pathName, CodeGenerator codeGenerator) {
+    protected AbstractCodeGenerator(String fileName, String templateName, String pathName, CodeHandler codeHandler) {
         this.fileName = fileName;
         this.templateName = templateName;
         this.pathName = pathName;
-        this.codeGenerator = codeGenerator;
+        this.codeHandler = codeHandler;
     }
 
     /**
@@ -81,12 +79,12 @@ public abstract class AbstractCodeGenerator {
         this.pathName = pathName;
     }
 
-    public CodeGenerator getCodeGenerator() {
-        return codeGenerator;
+    public CodeHandler getCodeHandler() {
+        return codeHandler;
     }
 
-    public void setCodeGenerator(CodeGenerator codeGenerator) {
-        this.codeGenerator = codeGenerator;
+    public void setCodeHandler(CodeHandler codeHandler) {
+        this.codeHandler = codeHandler;
     }
 
 

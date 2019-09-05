@@ -1,14 +1,14 @@
 package org.jss.tool.code.impl;
 
 
-import org.jss.tool.code.CodeGenerator;
+import org.jss.tool.code.CodeHandler;
 
 /**
  * @author jushisi
  * @date 2019/9/2
  */
 
-public class HtmlCodeGenerator implements CodeGenerator {
+public class HtmlCodeHandler implements CodeHandler {
 
     @Override
     public String handleInputLine(String format, String line) {
