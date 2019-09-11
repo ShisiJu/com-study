@@ -1,0 +1,5 @@
+JYDW	经营单位代码 FQLX	分区代码
+FQMC	分区名称 SZZ	树种组
+NL	年龄 XJ_NSZ	胸径年生长
+SG_NSZ	树高年生长 XJ_NSZ	蓄积年生长
+BZ_MIN	比值最小值 BZ_MAX	比值最大值

@@ -16,6 +16,12 @@ public abstract class AbstractCodeGenerator {
     protected String pathName;
     protected CodeHandler codeHandler;
 
+    protected AbstractCodeGenerator(String fileName, String templateName, String pathName) {
+        this.fileName = fileName;
+        this.templateName = templateName;
+        this.pathName = pathName;
+    }
+
     protected AbstractCodeGenerator(String fileName, String templateName, String pathName, CodeHandler codeHandler) {
         this.fileName = fileName;
         this.templateName = templateName;

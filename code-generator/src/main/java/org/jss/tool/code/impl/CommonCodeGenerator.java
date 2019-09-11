@@ -55,6 +55,10 @@ public class CommonCodeGenerator extends AbstractCodeGenerator {
     }
 
 
+    public CommonCodeGenerator(String fileName, String templateName, String pathName) {
+        super(fileName, templateName, pathName);
+    }
+
     public CommonCodeGenerator(String fileName, String templateName, String pathName, CodeHandler codeHandler) {
         super(fileName, templateName, pathName, codeHandler);
     }

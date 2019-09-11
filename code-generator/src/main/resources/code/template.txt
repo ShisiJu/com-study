@@ -1,0 +1,1 @@
+ <div field="XBID" align="center" headerAlign="center">小班ID</div>

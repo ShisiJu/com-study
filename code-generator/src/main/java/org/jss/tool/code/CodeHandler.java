@@ -5,6 +5,8 @@ package org.jss.tool.code;
  * @author jushisi
  * @date 18:47 2019/9/4
  **/
+
+@FunctionalInterface
 public interface CodeHandler {
 
     /**
